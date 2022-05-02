@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello world" > foobar.txt
+      - run: echo "goodbye world" > foobar.txt
       - uses: actions/upload-artifact@v3
         with:
           name: foobar
