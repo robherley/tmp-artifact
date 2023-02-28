@@ -12,6 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: check attempt
+        run: |
+          echo $GITHUB_RUN_ATTEMPT
+          if [ "$GITHUB_RUN_ATTEMPT" -eq 2 ]; then
+            exit 1
+          fi
       - run: echo "hello world" > foobar.txt
       - uses: actions/upload-artifact@v3
         with:
